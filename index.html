@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+
+<style>
+html { scroll-behavior: smooth; }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    transition: 0.3s;
+    color: white;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+}
+
+header img {
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+/* Navigation */
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Buttons */
+button {
+    padding: 8px 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: white;
+}
+
+/* Container & Boxes */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.box {
+    width: 300px;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.box:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(255,255,255,0.6);
+}
+
+/* Unique Colors for Each Box */
+#about { background: #ff6a6a; }
+#skills { background: #6a89ff; }
+#projects { background: #38ada9; }
+#achievements { background: #e58e26; }
+#motto { background: #b71540; }
+#contact { background: #6c5ce7; }
+
+/* Skill Bars */
+.bar {
+    background: rgba(255,255,255,0.3);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.bar div {
+    height: 10px;
+    background: white;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #000;
+    color: white;
+}
+
+/* Dark Mode */
+.dark {
+    background: #121212;
+}
+
+.dark header {
+    background: #000 !important;
+}
+
+.dark .box {
+    background: #1e1e1e !important;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>👨‍💻 Devadharshni.S</h1>
+    <p>🎓 Student | 💻 Programmer</p>
+
+    <img src="https://stockcake.com/i/dewy-red-rose_1424381_993251" width="120">
+
+    <h2 id="typing"></h2>
+
+    <nav>
+        <a href="#about">👤 About</a>
+        <a href="#skills">⚡ Skills</a>
+        <a href="#projects">📂 Projects</a>
+        <a href="#achievements">🏆 Achievements</a>
+        <a href="#motto">💡 Motto</a>
+        <a href="#contact">📞 Contact</a>
+    </nav>
+
+    <br>
+    <button onclick="toggleMode()">🌙 Dark Mode</button>
+</header>
+
+<div class="container">
+
+    <!-- About -->
+    <div class="box" id="about">
+        <h2>👤 About Me</h2>
+        <p>
+            I am a passionate student with knowledge in C, C++, Java, HTML, and Linux 💻. 
+            I love learning and building projects 🚀.💻 I have a strong foundation in C, C++, Java, HTML, and Linux, and I love exploring new technologies.
+🚀 I enjoy building projects that challenge me and help me grow as a developer.
+🎯 My goal is to continuously learn, innovate, and create solutions that make a difference.
+        </p>
+    </div>
+
+    <!-- Skills -->
+    <div class="box" id="skills">
+        <h2>⚡ Skills</h2>
+        <p>💻 C</p>
+        <div class="bar"><div style="width:70%"></div></div>
+        <p>💻 C++</p>
+        <div class="bar"><div style="width:65%"></div></div>
+        <p>☕ Java</p>
+        <div class="bar"><div style="width:60%"></div></div>
+        <p>🌐 HTML</p>
+        <div class="bar"><div style="width:75%"></div></div>
+        <p>🐧 Linux</p>
+        <div class="bar"><div style="width:55%"></div></div>
+    </div>
+
+    <!-- Projects -->
+    <div class="box" id="projects">
+        <h2>📂 Projects</h2>
+        <ul>
+            <li>🧮 Simple Calculator (C/C++)</li>
+            <li>📊 Student Record System (Java)</li>
+            <li>🌐 Portfolio Website (HTML)</li>
+        </ul>
+    </div>
+
+    <!-- Achievements -->
+    <div class="box" id="achievements">
+        <h2>🏆 Achievements</h2>
+        <ul>
+            <li>✅ Completed programming basics</li>
+            <li>🏅 Participated in coding events</li>
+            <li>🚀 Built beginner projects</li>
+        </ul>
+    </div>
+
+    <!-- Motto -->
+    <div class="box" id="motto">
+        <h2>💡 My Motto</h2>
+        <p>"🚀 Dream in code, create in reality. 💻""Code today, innovate tomorrow." 💡
+"Learning never stops, and neither do I." 📚</p>
+    </div>
+
+    <!-- Contact -->
+    <div class="box" id="contact">
+        <h2>📞 Contact</h2>
+        <p>📧 Email: devadharshni90@email.com</p>
+        <p>📱 Phone: +91 1234567890</p>
+        <p>📍 Tamil Nadu, India</p>
+        <p>⏰ <span id="time"></span></p>
+
+        <a href="resume.pdf" download>
+            <button>📄 Download CV</button>
+        </a>
+    </div>
+
+</div>
+
+<footer>
+    <p>✨ © 2026 Devadharshni.S | Made with 💖</p>
+</footer>
+
+<script>
+const text = "🚀 Welcome to My Portfolio";
+let i = 0;
+function typeEffect() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 100);
+    }
+}
+typeEffect();
+
+function toggleMode() {
+    document.body.classList.toggle("dark");
+}
+
+setInterval(() => {
+    document.getElementById("time").innerHTML = new Date().toLocaleString();
+}, 1000);
+
+alert("👋 Welcome to my portfolio!");
+</script>
+
+</body>
+</html>
